@@ -1,0 +1,1771 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conecte Fibra | Internet Fibra Óptica de Alta Velocidade</title>
+  <meta name="description" content="Conecte Fibra: internet fibra óptica com velocidade real, sem travamentos e suporte técnico especializado. Consulte disponibilidade na sua região agora." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Conecte Fibra | Internet Fibra Óptica" />
+  <meta property="og:description" content="Fibra óptica de ponta a ponta com velocidade real e suporte técnico especializado." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* =============================================
+       TOKENS & RESET
+    ============================================= */
+    :root {
+      --white:      #FFFFFF;
+      --bg-light:   #F5F7FA;
+      --blue-dark:  #002147;
+      --blue-mid:   #003580;
+      --blue-cta:   #0056b3;
+      --blue-hover: #004494;
+      --text-body:  #3D4A5C;
+      --text-muted: #6B7A90;
+      --border:     #DDE3ED;
+      --radius:     12px;
+      --radius-sm:  8px;
+      --shadow:     0 4px 24px rgba(0,33,71,.10);
+      --shadow-lg:  0 8px 40px rgba(0,33,71,.16);
+      --transition: .22s cubic-bezier(.4,0,.2,1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; font-size: 16px; -webkit-text-size-adjust: 100%; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--white);
+      color: var(--text-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    .container {
+      width: 100%;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    /* =============================================
+       HEADER — mobile first
+    ============================================= */
+    #header {
+      position: sticky;
+      top: 0;
+      z-index: 900;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 1px 8px rgba(0,33,71,.06);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 58px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--blue-dark);
+      letter-spacing: -.3px;
+    }
+
+    .logo-icon {
+      width: 34px;
+      height: 34px;
+      background: var(--blue-cta);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .logo-icon svg { width: 18px; height: 18px; fill: none; stroke: #fff; stroke-width: 2.5; stroke-linecap: round; }
+
+    .nav-desktop { display: none; gap: 8px; align-items: center; }
+
+    .nav-desktop a {
+      font-size: .9rem;
+      font-weight: 500;
+      color: var(--text-body);
+      padding: 8px 14px;
+      border-radius: 6px;
+      transition: background var(--transition), color var(--transition);
+    }
+
+    .nav-desktop a:hover { background: var(--bg-light); color: var(--blue-dark); }
+
+    .nav-desktop .btn-nav {
+      background: var(--blue-cta);
+      color: #fff;
+      padding: 9px 18px;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+
+    .nav-desktop .btn-nav:hover { background: var(--blue-hover); }
+
+    /* Hamburger */
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 10px;
+      border-radius: 6px;
+      transition: background var(--transition);
+      touch-action: manipulation;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2.5px;
+      background: var(--blue-dark);
+      border-radius: 2px;
+      transition: transform var(--transition), opacity var(--transition);
+    }
+
+    .hamburger.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+    /* Mobile nav drawer */
+    .nav-mobile {
+      display: none;
+      flex-direction: column;
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      padding: 10px 16px 16px;
+      gap: 2px;
+    }
+
+    .nav-mobile.open { display: flex; }
+
+    .nav-mobile a {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-body);
+      padding: 14px 10px;
+      border-radius: 8px;
+      transition: background var(--transition);
+    }
+
+    .nav-mobile .btn-nav-m {
+      background: var(--blue-cta);
+      color: #fff;
+      text-align: center;
+      padding: 16px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1rem;
+      margin-top: 8px;
+    }
+
+    /* =============================================
+       HERO — mobile first
+    ============================================= */
+    #hero {
+      background: linear-gradient(155deg, var(--blue-dark) 0%, var(--blue-mid) 60%, #0056b3 100%);
+      color: #fff;
+      padding: 40px 0 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(255,255,255,.04) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+
+    .hero-content { position: relative; z-index: 1; }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 100px;
+      padding: 6px 12px;
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .4px;
+      text-transform: uppercase;
+      color: #A8D8FF;
+      margin-bottom: 18px;
+    }
+
+    .hero-badge-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #4FC3F7;
+      animation: pulse 2s infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: .5; transform: scale(1.4); }
+    }
+
+    #hero h1 {
+      font-size: 1.9rem;
+      font-weight: 800;
+      line-height: 1.18;
+      letter-spacing: -.4px;
+      margin-bottom: 16px;
+    }
+
+    #hero h1 em { font-style: normal; color: #4FC3F7; }
+
+    #hero > .container > .hero-content > p {
+      font-size: 1rem;
+      color: rgba(255,255,255,.8);
+      margin-bottom: 28px;
+      line-height: 1.65;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .btn-primary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: #fff;
+      color: var(--blue-dark);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 17px 24px;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      transition: transform var(--transition), box-shadow var(--transition);
+      min-height: 56px;
+      width: 100%;
+      touch-action: manipulation;
+    }
+
+    .btn-primary:active { transform: scale(.98); }
+
+    .btn-secondary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: transparent;
+      color: #fff;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 15px 24px;
+      border-radius: 12px;
+      border: 2px solid rgba(255,255,255,.4);
+      cursor: pointer;
+      transition: background var(--transition), border-color var(--transition);
+      min-height: 56px;
+      width: 100%;
+      touch-action: manipulation;
+    }
+
+    .btn-secondary:active { background: rgba(255,255,255,.1); }
+
+    /* Hero stats bar */
+    .hero-stats {
+      margin-top: 36px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,.12);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .hero-stat {
+      padding: 14px 8px;
+      background: rgba(0,0,0,.18);
+      text-align: center;
+    }
+
+    .hero-stat strong {
+      display: block;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1;
+    }
+
+    .hero-stat span {
+      font-size: .7rem;
+      color: rgba(255,255,255,.6);
+      margin-top: 4px;
+      display: block;
+    }
+
+    /* =============================================
+       TRUST SEALS — mobile first
+    ============================================= */
+    #seals {
+      background: var(--bg-light);
+      padding: 32px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .seals-title {
+      text-align: center;
+      font-size: .75rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: .8px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .seals-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .seal-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .seal-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 9px;
+      background: var(--blue-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .seal-icon svg { width: 20px; height: 20px; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; }
+
+    .seal-text strong {
+      display: block;
+      font-size: .8rem;
+      font-weight: 700;
+      color: var(--blue-dark);
+      line-height: 1.3;
+    }
+
+    .seal-text span { font-size: .7rem; color: var(--text-muted); line-height: 1.3; }
+
+    /* =============================================
+       PLANS — mobile first (coluna única)
+    ============================================= */
+    #planos {
+      padding: 48px 0 56px;
+      background: var(--white);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .section-eyebrow {
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--blue-cta);
+      margin-bottom: 8px;
+    }
+
+    .section-header h2 {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--blue-dark);
+      letter-spacing: -.3px;
+      line-height: 1.2;
+    }
+
+    .section-header p {
+      margin-top: 10px;
+      font-size: .9rem;
+      color: var(--text-muted);
+    }
+
+    .plans-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .plan-card {
+      background: var(--bg-light);
+      border: 2px solid var(--border);
+      border-radius: 16px;
+      padding: 24px 20px;
+      position: relative;
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+
+    .plan-card.featured {
+      background: var(--blue-dark);
+      border-color: var(--blue-dark);
+      color: #fff;
+    }
+
+    .plan-card.featured .plan-price-currency,
+    .plan-card.featured .plan-price-value,
+    .plan-card.featured .plan-price-period,
+    .plan-card.featured .plan-speed,
+    .plan-card.featured .plan-name { color: #fff; }
+
+    .plan-card.featured .plan-feature { color: rgba(255,255,255,.8); }
+    .plan-card.featured .plan-feature svg { stroke: #4FC3F7; }
+
+    .badge-popular {
+      position: absolute;
+      top: -13px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #0056b3;
+      color: #fff;
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .6px;
+      text-transform: uppercase;
+      padding: 5px 16px;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+
+    .plan-name {
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .plan-speed {
+      font-size: 2.6rem;
+      font-weight: 800;
+      color: var(--blue-dark);
+      line-height: 1;
+    }
+
+    .plan-speed span { font-size: 1rem; font-weight: 600; opacity: .6; }
+
+    .plan-price {
+      display: flex;
+      align-items: flex-end;
+      gap: 2px;
+      margin: 14px 0;
+    }
+
+    .plan-price-currency { font-size: .9rem; font-weight: 700; color: var(--text-body); padding-bottom: 4px; }
+    .plan-price-value { font-size: 2.2rem; font-weight: 800; color: var(--blue-dark); line-height: 1; }
+    .plan-price-period { font-size: .85rem; color: var(--text-muted); padding-bottom: 4px; }
+
+    .plan-divider { height: 1px; background: var(--border); margin: 14px 0; opacity: .4; }
+
+    .plan-feature {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: .875rem;
+      color: var(--text-body);
+      margin-bottom: 9px;
+    }
+
+    .plan-feature svg { width: 16px; height: 16px; flex-shrink: 0; stroke: var(--blue-cta); fill: none; stroke-width: 2.5; stroke-linecap: round; }
+
+    .plan-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .btn-plan-cta {
+      background: var(--blue-cta);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      padding: 16px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background var(--transition);
+      min-height: 54px;
+      width: 100%;
+      touch-action: manipulation;
+    }
+
+    .btn-plan-cta:active { background: var(--blue-hover); }
+
+    .plan-card.featured .btn-plan-cta { background: #fff; color: var(--blue-dark); }
+    .plan-card.featured .btn-plan-cta:active { background: #e8f0fe; }
+
+    .btn-details {
+      background: transparent;
+      color: var(--blue-cta);
+      border: none;
+      font-size: .9rem;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 8px;
+      text-align: center;
+      text-decoration: underline;
+      width: 100%;
+      touch-action: manipulation;
+    }
+
+    .plan-card.featured .btn-details { color: rgba(255,255,255,.75); }
+
+    /* =============================================
+       MODAL — mobile: sheet inferior
+    ============================================= */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.55);
+      z-index: 1000;
+      align-items: flex-end;   /* cola na base no mobile */
+      justify-content: center;
+      padding: 0;
+    }
+
+    .modal-overlay.open { display: flex; }
+
+    .modal-box {
+      background: var(--white);
+      border-radius: 20px 20px 0 0;
+      width: 100%;
+      max-height: 92vh;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      box-shadow: var(--shadow-lg);
+      animation: slideUp .28s ease;
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* handle visual */
+    .modal-box::before {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 4px;
+      background: rgba(0,0,0,.15);
+      border-radius: 2px;
+      margin: 10px auto 0;
+    }
+
+    .modal-header {
+      background: var(--blue-dark);
+      color: #fff;
+      padding: 20px 20px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .modal-header h3 { font-size: 1.15rem; font-weight: 800; }
+    .modal-header p { font-size: .82rem; opacity: .7; margin-top: 3px; }
+
+    .modal-close {
+      background: rgba(255,255,255,.15);
+      border: none;
+      color: #fff;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      touch-action: manipulation;
+    }
+
+    .modal-body { padding: 20px 20px 32px; }
+
+    .modal-spec {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 13px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: .88rem;
+      gap: 12px;
+    }
+
+    .modal-spec:last-of-type { border-bottom: none; }
+    .modal-spec-label { color: var(--text-muted); flex-shrink: 0; }
+    .modal-spec-value { font-weight: 700; color: var(--blue-dark); text-align: right; }
+
+    .modal-cta {
+      background: #25D366;
+      color: #fff;
+      border: none;
+      border-radius: 14px;
+      padding: 18px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 58px;
+      touch-action: manipulation;
+    }
+
+    .modal-cta:active { opacity: .9; }
+
+    /* =============================================
+       ABOUT — mobile first
+    ============================================= */
+    #sobre {
+      background: var(--blue-dark);
+      color: #fff;
+      padding: 48px 0;
+    }
+
+    .about-eyebrow {
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #4FC3F7;
+      margin-bottom: 8px;
+    }
+
+    #sobre h2 {
+      font-size: 1.65rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    #sobre > .container > p {
+      color: rgba(255,255,255,.72);
+      font-size: .93rem;
+      line-height: 1.8;
+      margin-bottom: 28px;
+    }
+
+    .about-pillars {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .pillar {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 12px;
+      padding: 18px;
+    }
+
+    .pillar-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      background: rgba(79,195,247,.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .pillar-icon svg { width: 19px; height: 19px; fill: none; stroke: #4FC3F7; stroke-width: 2; stroke-linecap: round; }
+
+    .pillar-text strong {
+      display: block;
+      font-size: .88rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 3px;
+    }
+
+    .pillar-text span { font-size: .8rem; color: rgba(255,255,255,.6); line-height: 1.5; }
+
+    /* =============================================
+       FAQ — mobile first
+    ============================================= */
+    #faq {
+      background: var(--bg-light);
+      padding: 48px 0;
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .faq-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 16px;
+      font-size: .9rem;
+      font-weight: 600;
+      color: var(--blue-dark);
+      cursor: pointer;
+      text-align: left;
+      min-height: 56px;
+      touch-action: manipulation;
+    }
+
+    .faq-chevron {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      stroke: var(--blue-cta);
+      fill: none;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      transition: transform var(--transition);
+    }
+
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+
+    .faq-answer {
+      display: none;
+      padding: 0 16px 18px;
+      font-size: .875rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+
+    .faq-item.open .faq-answer { display: block; }
+
+    /* =============================================
+       FOOTER — mobile first
+    ============================================= */
+    #footer {
+      background: #001428;
+      color: rgba(255,255,255,.55);
+      padding: 40px 0 28px;
+    }
+
+    .footer-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      margin-bottom: 28px;
+    }
+
+    .footer-brand .logo { color: #fff; margin-bottom: 10px; }
+
+    .footer-brand p { font-size: .82rem; line-height: 1.7; }
+
+    .footer-col h4 {
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .footer-col p, .footer-col a {
+      font-size: .82rem;
+      display: block;
+      margin-bottom: 8px;
+      transition: color var(--transition);
+    }
+
+    .footer-col a:hover { color: #fff; }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: .75rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .footer-links a { font-size: .75rem; transition: color var(--transition); }
+    .footer-links a:hover { color: #fff; }
+
+    /* =============================================
+       WHATSAPP FLOAT — maior no mobile
+    ============================================= */
+    #whatsapp-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 16px;
+      z-index: 950;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,.45);
+      cursor: pointer;
+      animation: wabounce 2.8s ease-in-out infinite;
+      touch-action: manipulation;
+    }
+
+    #whatsapp-btn:active { transform: scale(.95); animation: none; }
+
+    #whatsapp-btn svg { width: 32px; height: 32px; fill: #fff; }
+
+    @keyframes wabounce {
+      0%, 90%, 100% { transform: scale(1); }
+      94% { transform: scale(1.08); }
+      97% { transform: scale(.96); }
+    }
+
+    /* =============================================
+       TABLET / DESKTOP — min 768px
+    ============================================= */
+    @media (min-width: 768px) {
+      .container { padding: 0 24px; }
+      .hamburger { display: none; }
+      .nav-mobile { display: none !important; }
+      .nav-desktop { display: flex; }
+
+      #hero { padding: 72px 0 80px; }
+      #hero h1 { font-size: 2.8rem; }
+
+      .hero-ctas { flex-direction: row; gap: 14px; }
+      .btn-primary, .btn-secondary { width: auto; }
+
+      .hero-stat strong { font-size: 1.6rem; }
+
+      .seals-grid { grid-template-columns: repeat(4, 1fr); gap: 14px; }
+
+      #planos { padding: 64px 0 72px; }
+      .section-header h2 { font-size: 2.2rem; }
+
+      .plans-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+
+      /* Modais: centralizado no desktop */
+      .modal-overlay { align-items: center; padding: 20px; }
+      .modal-box { border-radius: 16px; max-width: 480px; }
+      .modal-box::before { display: none; }
+
+      .about-pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+      #sobre { padding: 64px 0; }
+      #sobre h2 { font-size: 2rem; }
+
+      #faq { padding: 64px 0; }
+      .faq-list { max-width: 720px; margin: 0 auto; }
+
+      .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; }
+      .footer-bottom { flex-direction: row; justify-content: space-between; align-items: center; }
+
+      #whatsapp-btn::before {
+        content: 'Fale no WhatsApp';
+        position: absolute;
+        right: calc(100% + 10px);
+        background: var(--blue-dark);
+        color: #fff;
+        font-family: 'Inter', sans-serif;
+        font-size: .78rem;
+        font-weight: 600;
+        white-space: nowrap;
+        padding: 6px 12px;
+        border-radius: 6px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity var(--transition);
+      }
+
+      #whatsapp-btn:hover::before { opacity: 1; }
+      #whatsapp-btn:hover { transform: scale(1.08); animation: none; }
+    }
+
+    @media (min-width: 1100px) {
+      #hero { padding: 88px 0 96px; }
+      #hero h1 { font-size: 3.2rem; }
+      .plans-grid { gap: 28px; }
+    }
+
+    /* Accessibility */
+    :focus-visible {
+      outline: 3px solid var(--blue-cta);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; }
+    }
+
+    /* =============================================
+       LEGAL MODAL (Privacidade / Termos)
+    ============================================= */
+    #modal-legal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.6);
+      z-index: 1100;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    #modal-legal.open { display: flex; }
+
+    .legal-box {
+      background: var(--white);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 680px;
+      max-height: 88vh;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 20px 60px rgba(0,0,0,.3);
+      animation: slideUp .25s ease;
+    }
+
+    .legal-header {
+      background: var(--blue-dark);
+      color: #fff;
+      padding: 20px 24px 0;
+      border-radius: 16px 16px 0 0;
+      flex-shrink: 0;
+    }
+
+    .legal-header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .legal-header-top h3 { font-size: 1.1rem; font-weight: 800; }
+
+    .legal-tabs {
+      display: flex;
+      gap: 4px;
+    }
+
+    .legal-tab {
+      background: rgba(255,255,255,.12);
+      border: none;
+      color: rgba(255,255,255,.7);
+      font-family: 'Inter', sans-serif;
+      font-size: .82rem;
+      font-weight: 600;
+      padding: 8px 18px;
+      border-radius: 8px 8px 0 0;
+      cursor: pointer;
+      transition: background var(--transition), color var(--transition);
+    }
+
+    .legal-tab.active {
+      background: var(--white);
+      color: var(--blue-dark);
+    }
+
+    .legal-tab:hover:not(.active) { background: rgba(255,255,255,.2); color: #fff; }
+
+    .legal-body {
+      overflow-y: auto;
+      padding: 28px 24px;
+      flex: 1;
+    }
+
+    .legal-panel { display: none; }
+    .legal-panel.active { display: block; }
+
+    .legal-panel h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--blue-dark);
+      margin: 20px 0 8px;
+    }
+
+    .legal-panel h4:first-child { margin-top: 0; }
+
+    .legal-panel p {
+      font-size: .875rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 4px;
+    }
+
+    .legal-close {
+      background: rgba(255,255,255,.15);
+      border: none;
+      color: #fff;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background var(--transition);
+    }
+    .legal-close:hover { background: rgba(255,255,255,.28); }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== HEADER ==================== -->
+  <header id="header">
+    <div class="container header-inner">
+      <a href="#" class="logo" aria-label="Conecte Fibra - Página inicial">
+        <div class="logo-icon">
+          <!-- Signal icon -->
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 12 C12 12 6 6 6 6" />
+            <path d="M5 5a9.5 9.5 0 0 1 14 0"/>
+            <path d="M8 8a5 5 0 0 1 8 0"/>
+            <circle cx="12" cy="13" r="1.5" fill="#fff" stroke="none"/>
+          </svg>
+        </div>
+        Conecte Fibra
+      </a>
+
+      <nav class="nav-desktop" aria-label="Menu principal">
+        <a href="#planos">Planos</a>
+        <a href="#sobre">Sobre nós</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://wa.me/5500000000000" class="btn-nav" target="_blank" rel="noopener">Falar no WhatsApp</a>
+      </nav>
+
+      <button class="hamburger" id="hamburger-btn" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <nav class="nav-mobile" id="mobile-nav" aria-label="Menu mobile">
+      <a href="#planos">Planos</a>
+      <a href="#sobre">Sobre nós</a>
+      <a href="#faq">FAQ</a>
+      <a href="https://wa.me/5500000000000" class="btn-nav-m" target="_blank" rel="noopener">Falar no WhatsApp</a>
+    </nav>
+  </header>
+
+  <!-- ==================== HERO ==================== -->
+  <section id="hero" aria-labelledby="hero-title">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          Fibra Óptica Ponta a Ponta
+        </div>
+
+        <h1 id="hero-title">
+          Internet que <em>não cai</em><br/>quando você mais precisa.
+        </h1>
+
+        <p>
+          Velocidade simétrica, instalação sem custo e suporte técnico humano disponível todos os dias. Descubra se a Conecte Fibra já chegou na sua região.
+        </p>
+
+        <div class="hero-ctas">
+          <a href="https://wa.me/5500000000000?text=Olá!%20Quero%20consultar%20a%20disponibilidade%20da%20Conecte%20Fibra%20na%20minha%20região."
+             class="btn-primary" target="_blank" rel="noopener" aria-label="Consultar disponibilidade via WhatsApp">
+            <!-- WhatsApp icon inline -->
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="color:var(--blue-cta)"><path d="M20.52 3.48A11.77 11.77 0 0 0 12 0C5.38 0 0 5.38 0 12a11.93 11.93 0 0 0 1.6 6L0 24l6.2-1.57A12 12 0 0 0 12 24c6.62 0 12-5.38 12-12 0-3.19-1.25-6.2-3.48-8.52zm-8.52 18.4a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.68.93.97-3.56-.24-.37A9.9 9.9 0 0 1 2.1 12C2.1 6.55 6.55 2.1 12 2.1A9.9 9.9 0 0 1 21.9 12c0 5.45-4.45 9.88-9.9 9.88zm5.44-7.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15s-.77.97-.95 1.17-.35.22-.65.07a8.2 8.2 0 0 1-2.4-1.48 9.14 9.14 0 0 1-1.66-2.07c-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.14-.17.19-.3.28-.5.1-.2.05-.37-.02-.52s-.67-1.6-.91-2.2c-.24-.57-.48-.5-.67-.5h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.46s1.06 2.86 1.21 3.06c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.48 1.69.62.71.22 1.36.19 1.87.11.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.34z"/></svg>
+            Consultar disponibilidade
+          </a>
+          <a href="https://wa.me/5500000000000?text=Olá!%20Quero%20falar%20com%20um%20consultor%20da%20Conecte%20Fibra." class="btn-secondary" target="_blank" rel="noopener">Falar com consultor</a>
+        </div>
+
+        <div class="hero-stats" role="list" aria-label="Números da Conecte Fibra">
+          <div class="hero-stat" role="listitem">
+            <strong>99,8%</strong>
+            <span>Uptime garantido</span>
+          </div>
+          <div class="hero-stat" role="listitem">
+            <strong>+12 mil</strong>
+            <span>Clientes ativos</span>
+          </div>
+          <div class="hero-stat" role="listitem">
+            <strong>24h</strong>
+            <span>Suporte técnico</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TRUST SEALS ==================== -->
+  <section id="seals" aria-labelledby="seals-title">
+    <div class="container">
+      <p class="seals-title" id="seals-title">Nossos compromissos com você</p>
+      <div class="seals-grid" role="list">
+
+        <div class="seal-card" role="listitem">
+          <div class="seal-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <div class="seal-text">
+            <strong>Conexão Estável</strong>
+            <span>Fibra óptica exclusiva sem compartilhamento excessivo</span>
+          </div>
+        </div>
+
+        <div class="seal-card" role="listitem">
+          <div class="seal-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="seal-text">
+            <strong>Fibra Ponta a Ponta</strong>
+            <span>Infraestrutura 100% óptica até a sua unidade</span>
+          </div>
+        </div>
+
+        <div class="seal-card" role="listitem">
+          <div class="seal-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.8 12.8 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.8 12.8 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div class="seal-text">
+            <strong>Suporte Ágil</strong>
+            <span>Atendimento técnico humano todos os dias</span>
+          </div>
+        </div>
+
+        <div class="seal-card" role="listitem">
+          <div class="seal-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          </div>
+          <div class="seal-text">
+            <strong>Sem Fidelidade</strong>
+            <span>Contratos transparentes sem multa de fidelização</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PLANS ==================== -->
+  <section id="planos" aria-labelledby="planos-title">
+    <div class="container">
+      <header class="section-header">
+        <p class="section-eyebrow">Planos disponíveis</p>
+        <h2 id="planos-title">Escolha a velocidade ideal para o seu perfil</h2>
+        <p>Todos os planos incluem instalação gratuita, IP fixo opcional e roteador Wi-Fi incluso.</p>
+      </header>
+
+      <div class="plans-grid" role="list">
+
+        <!-- PLANO 200 MB -->
+        <article class="plan-card" role="listitem" aria-labelledby="plan-200-name">
+          <p class="plan-name" id="plan-200-name">Essencial</p>
+          <div class="plan-speed">200 <span>Mbps</span></div>
+          <div class="plan-price">
+            <span class="plan-price-currency">R$</span>
+            <span class="plan-price-value">89</span>
+            <span class="plan-price-period">/mês</span>
+          </div>
+          <div class="plan-divider"></div>
+          <div class="plan-feature">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            200 Mbps download e upload
+          </div>
+          <div class="plan-feature">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Roteador Wi-Fi incluso
+          </div>
+          <div class="plan-feature">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Instalação gratuita
+          </div>
+          <div class="plan-feature">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Suporte 7 dias por semana
+          </div>
+          <div class="plan-actions">
+            <button class="btn-plan-cta" onclick="openWhatsApp('Plano Essencial 200 Mbps')" aria-label="Contratar Plano Essencial 200 Mbps">Contratar agora</button>
+            <button class="btn-details" onclick="openModal('plano200')" aria-label="Ver detalhes do Plano Essencial 200 Mbps">Ver todos os detalhes</button>
+          </div>
+        </article>
+
+        <!-- PLANO 500 MB — DESTAQUE -->
+        <article class="plan-card featured" role="listitem" aria-labelledby="plan-500-name">
+          <span class="badge-popular" aria-label="Mais popular">⭐ Mais Popular</span>
+          <p class="plan-name" id="plan-500-name">Avançado</p>
+          <div class="plan-speed">500 <span>Mbps</span></div>
+          <div class="plan-price">
+            <span class="plan-price-currency">R$</span>
+            <span class="plan-price-value">129</span>
+            <span class="plan-price-period">/mês</span>
+          </div>
+          <div class="plan-divider"></div>
+          <div class="plan-feature">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            500 Mbps download e upload
+          </div>
+          <div class="plan-feature">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Roteador Wi-Fi 6 incluso
+          </div>
+          <div class="plan-feature">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            IP fixo incluso
+          </div>
+          <div class="plan-feature">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Suporte prioritário 24h
+          </div>
+          <div class="plan-actions">
+            <button class="btn-plan-cta" onclick="openWhatsApp('Plano Avançado 500 Mbps')" aria-label="Contratar Plano Avançado 500 Mbps">Contratar agora</button>
+            <button class="btn-details" onclick="openModal('plano500')" aria-label="Ver detalhes do Plano Avançado 500 Mbps">Ver todos os detalhes</button>
+          </div>
+        </article>
+
+        <!-- PLANO 1 GB -->
+        <article class="plan-card" role="listitem" aria-labelledby="plan-1g-name">
+          <p class="plan-name" id="plan-1g-name">Ultra</p>
+          <div class="plan-speed">1 <span>Gbps</span></div>
+          <div class="plan-price">
+            <span class="plan-price-currency">R$</span>
+            <span class="plan-price-value">189</span>
+            <span class="plan-price-period">/mês</span>
+          </div>
+          <div class="plan-divider"></div>
+          <div class="plan-feature">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            1 Gbps simétrico garantido
+          </div>
+          <div class="plan-feature">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Roteador Wi-Fi 6E enterprise
+          </div>
+          <div class="plan-feature">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            IP fixo + SLA 99,8%
+          </div>
+          <div class="plan-feature">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Gerente técnico dedicado
+          </div>
+          <div class="plan-actions">
+            <button class="btn-plan-cta" onclick="openWhatsApp('Plano Ultra 1 Gbps')" aria-label="Contratar Plano Ultra 1 Gbps">Contratar agora</button>
+            <button class="btn-details" onclick="openModal('plano1g')" aria-label="Ver detalhes do Plano Ultra 1 Gbps">Ver todos os detalhes</button>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT ==================== -->
+  <section id="sobre" aria-labelledby="sobre-title">
+    <div class="container">
+      <p class="about-eyebrow">Sobre a Conecte Fibra</p>
+      <h2 id="sobre-title">Infraestrutura própria.<br/>Compromisso real.</h2>
+      <p>
+        Somos um provedor regional com rede própria de fibra óptica, operando com padrões técnicos rigorosos e transparência contratual. Acreditamos que a internet é um serviço essencial e tratamos cada conexão com essa responsabilidade.
+      </p>
+
+      <div class="about-pillars" role="list">
+        <div class="pillar" role="listitem">
+          <div class="pillar-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <div class="pillar-text">
+            <strong>Rede Própria</strong>
+            <span>Infraestrutura 100% própria, sem revenda de terceiros. Controlamos toda a cadeia da conexão.</span>
+          </div>
+        </div>
+
+        <div class="pillar" role="listitem">
+          <div class="pillar-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="pillar-text">
+            <strong>Suporte Técnico Humano</strong>
+            <span>Equipe técnica especializada disponível todos os dias, sem chatbots, sem filas interativas intermináveis.</span>
+          </div>
+        </div>
+
+        <div class="pillar" role="listitem">
+          <div class="pillar-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <div class="pillar-text">
+            <strong>Contratos Transparentes</strong>
+            <span>Sem cláusulas ocultas. Tudo o que você paga e recebe está descrito com clareza no contrato.</span>
+          </div>
+        </div>
+
+        <div class="pillar" role="listitem">
+          <div class="pillar-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="pillar-text">
+            <strong>Instalação Pontual</strong>
+            <span>Agendamento com janela de horário definida e equipe técnica certificada para o serviço.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FAQ ==================== -->
+  <section id="faq" aria-labelledby="faq-title">
+    <div class="container">
+      <header class="section-header">
+        <p class="section-eyebrow">Dúvidas frequentes</p>
+        <h2 id="faq-title">Perguntas mais comuns</h2>
+      </header>
+
+      <div class="faq-list" role="list">
+        <div class="faq-item" role="listitem">
+          <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+            Como verifico se meu endereço tem cobertura?
+            <svg class="faq-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer" hidden>
+            A forma mais rápida é entrar em contato via WhatsApp com o seu CEP ou endereço completo. Nossa equipe verifica a disponibilidade em tempo real e retorna em minutos.
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+            Existe taxa de instalação ou fidelidade?
+            <svg class="faq-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer" hidden>
+            Não. A instalação é gratuita em todos os planos e não exigimos período de fidelidade. Você pode cancelar a qualquer momento, respeitando apenas o aviso prévio de 30 dias previsto em contrato.
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+            A velocidade é garantida ou compartilhada?
+            <svg class="faq-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer" hidden>
+            Todos os planos oferecem velocidade simétrica (download e upload iguais) com garantia mínima de 80% da velocidade contratada conforme resolução da Anatel. A fibra óptica ponta a ponta garante estabilidade muito superior ao cabo convencional.
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+            Qual o prazo para instalação após a contratação?
+            <svg class="faq-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer" hidden>
+            Em áreas com infraestrutura já disponível, a instalação é realizada em até 3 dias úteis após a assinatura do contrato. Em regiões em expansão, o prazo pode variar — nosso atendimento informa o cronograma exato.
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+            Como funciona o suporte técnico?
+            <svg class="faq-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer" hidden>
+            O suporte técnico é prestado por profissionais habilitados via WhatsApp e telefone, sete dias por semana. Para clientes do plano Ultra, há gerente técnico dedicado com contato direto e SLA documentado.
+          </div>
+        </div>
+
+        <div class="faq-item" role="listitem">
+          <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+            O roteador Wi-Fi é incluso no plano?
+            <svg class="faq-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer" hidden>
+            Sim. Todos os planos incluem roteador Wi-Fi em comodato (sem custo adicional). O modelo varia conforme o plano: planos Essencial recebem Wi-Fi 5 dual band; Avançado e Ultra recebem Wi-Fi 6, com melhor desempenho em ambientes com múltiplos dispositivos.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer id="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo" aria-hidden="true">
+            <div class="logo-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true" style="width:20px;height:20px;fill:none;stroke:#fff;stroke-width:2.5;stroke-linecap:round">
+                <path d="M5 5a9.5 9.5 0 0 1 14 0"/>
+                <path d="M8 8a5 5 0 0 1 8 0"/>
+                <circle cx="12" cy="13" r="1.5" fill="#fff" stroke="none"/>
+              </svg>
+            </div>
+            Conecte Fibra
+          </div>
+          <p>Provedor de internet fibra óptica com infraestrutura própria. Comprometidos com velocidade real, estabilidade e transparência.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <a href="#planos">Planos e preços</a>
+          <a href="#sobre">Sobre a empresa</a>
+          <a href="#faq">Perguntas frequentes</a>
+          <a href="https://wa.me/5500000000000" target="_blank" rel="noopener">Atendimento</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Informações legais</h4>
+          <a href="#" onclick="openLegal('privacidade');return false;">Política de Privacidade</a>
+          <a href="#" onclick="openLegal('termos');return false;">Termos de Uso</a>
+          <a href="#">Central do Assinante</a>
+          <p style="margin-top:12px;">CNPJ: 00.000.000/0001-00</p>
+          <p>Rua Exemplo, 1000 – Sala 201<br/>Cidade, Estado – CEP 00000-000</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="footer-year"></span> Conecte Fibra Telecomunicações LTDA. Todos os direitos reservados.</p>
+        <div class="footer-links">
+          <a href="#" onclick="openLegal('privacidade');return false;">Política de Privacidade</a>
+          <a href="#" onclick="openLegal('termos');return false;">Termos de Uso</a>
+          <a href="#">Central do Assinante</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== WHATSAPP BTN ==================== -->
+  <a href="https://wa.me/5500000000000?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informações%20sobre%20os%20planos%20da%20Conecte%20Fibra."
+     id="whatsapp-btn"
+     target="_blank"
+     rel="noopener"
+     aria-label="Fale conosco pelo WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M20.52 3.48A11.77 11.77 0 0 0 12 0C5.38 0 0 5.38 0 12a11.93 11.93 0 0 0 1.6 6L0 24l6.2-1.57A12 12 0 0 0 12 24c6.62 0 12-5.38 12-12 0-3.19-1.25-6.2-3.48-8.52zm-8.52 18.4a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.68.93.97-3.56-.24-.37A9.9 9.9 0 0 1 2.1 12C2.1 6.55 6.55 2.1 12 2.1A9.9 9.9 0 0 1 21.9 12c0 5.45-4.45 9.88-9.9 9.88zm5.44-7.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15s-.77.97-.95 1.17-.35.22-.65.07a8.2 8.2 0 0 1-2.4-1.48 9.14 9.14 0 0 1-1.66-2.07c-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.14-.17.19-.3.28-.5.1-.2.05-.37-.02-.52s-.67-1.6-.91-2.2c-.24-.57-.48-.5-.67-.5h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.46s1.06 2.86 1.21 3.06c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.48 1.69.62.71.22 1.36.19 1.87.11.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.34z"/>
+    </svg>
+  </a>
+
+  <!-- ==================== MODALS ==================== -->
+  <!-- Modal 200 MB -->
+  <div class="modal-overlay" id="modal-plano200" role="dialog" aria-modal="true" aria-labelledby="modal200-title" onclick="closeModalOnOverlay(event, 'plano200')">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div>
+          <h3 id="modal200-title">Plano Essencial</h3>
+          <p>200 Mbps — R$ 89/mês</p>
+        </div>
+        <button class="modal-close" onclick="closeModal('plano200')" aria-label="Fechar modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-spec"><span class="modal-spec-label">Velocidade de download</span><span class="modal-spec-value">200 Mbps</span></div>
+        <div class="modal-spec"><span class="modal-spec-label">Velocidade de upload</span><span class="modal-spec-value">200 Mbps</span></div>
+        <div class="modal-spec"><span class="modal-spec-label">Tipo de conexão</span><span class="modal-spec-value">Fibra óptica FTTH</span></div>
+        <div class="modal-spec"><span class="modal-spec-label">Roteador Wi-Fi</span><span class="modal-spec-value">Incluso (Wi-Fi 5)</span></div>
+        <div class="modal-spec"><span class="modal-spec-label">IP fixo</span><span class="modal-spec-value">Opcional (+R$ 15/mês)</span></div>
+        <div class="modal-spec"><span class="modal-spec-label">Instalação</span><span class="modal-spec-value">Gratuita</span></div>
+        <div class="modal-spec"><span class="modal-spec-label">Fidelidade</span><span class="modal-spec-value">Nenhuma</span></div>
+        <div class="modal-spec"><span class="modal-spec-label">Suporte técnico</span><span class="modal-spec-value">7 dias/semana</span></div>
+        <div class="modal-spec"><span class="modal-spec-label">Garantia de velocidade</span><span class="modal-spec-value">Mínimo 80% (Anatel)</span></div>
+        <button class="modal-cta" onclick="openWhatsApp('Plano Essencial 200 Mbps')">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.77 11.77 0 0 0 12 0C5.38 0 0 5.38 0 12a11.93 11.93 0 0 0 1.6 6L0 24l6.2-1.57A12 12 0 0 0 12 24c6.62 0 12-5.38 12-12 0-3.19-1.25-6.2-3.48-8.52zm-8.52 18.4a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.68.93.97-3.56-.24-.37A9.9 9.9 0 0 1 2.1 12C2.1 6.55 6.55 2.1 12 2.1A9.9 9.9 0 0 1 21.9 12c0 5.45-4.45 9.88-9.9 9.88zm5.44-7.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15s-.77.97-.95 1.17-.35.22-.65.07a8.2 8.2 0 0 1-2.4-1.48 9.14 9.14 0 0 1-1.66-2.07c-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.14-.17.19-.3.28-.5.1-.2.05-.37-.02-.52s-.67-1.6-.91-2.2c-.24-.57-.48-.5-.67-.5h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.46s1.06 2.86 1.21 3.06c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.48 1.69.62.71.22 1.36.19 1.87.11.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.34z"/></svg>
+          Contratar via WhatsApp
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 500 MB -->
+  <div class="modal-overlay" id="modal-plano500" role="dialog" aria-modal="true" aria-labelledby="modal500-title" onclick="closeModalOnOverlay(event, 'plano500')">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div>
+          <h3 id="modal500-title">Plano Avançado ⭐</h3>
+          <p>500 Mbps — R$ 129/mês</p>
+        </div>
+        <button class="modal-close" onclick="closeModal('plano500')" aria-label="Fechar modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-spec"><span class="modal-spec-label">Velocidade de download</span><span class="modal-spec-value">500 Mbps</span></div>
+        <div class="modal-spec"><span class="modal-spec-label">Velocidade de upload</span><span class="modal-spec-value">500 Mbps</span></div>
+        <div class="modal-spec"><span class="modal-spec-label">Tipo de conexão</span><span class="modal-spec-value">Fibra óptica FTTH</span></div>
+        <div class="modal-spec"><span class="modal-spec-label">Roteador Wi-Fi</span><span class="modal-spec-value">Incluso (Wi-Fi 6)</span></div>
+        <div class="modal-spec"><span class="modal-spec-label">IP fixo</span><span class="modal-spec-value">Incluso</span></div>
+        <div class="modal-spec"><span class="modal-spec-label">Instalação</span><span class="modal-spec-value">Gratuita</span></div>
+        <div class="modal-spec"><span class="modal-spec-label">Fidelidade</span><span class="modal-spec-value">Nenhuma</span></div>
+        <div class="modal-spec"><span class="modal-spec-label">Suporte técnico</span><span class="modal-spec-value">Prioritário 24h</span></div>
+        <div class="modal-spec"><span class="modal-spec-label">Garantia de velocidade</span><span class="modal-spec-value">Mínimo 80% (Anatel)</span></div>
+        <button class="modal-cta" onclick="openWhatsApp('Plano Avançado 500 Mbps')">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.77 11.77 0 0 0 12 0C5.38 0 0 5.38 0 12a11.93 11.93 0 0 0 1.6 6L0 24l6.2-1.57A12 12 0 0 0 12 24c6.62 0 12-5.38 12-12 0-3.19-1.25-6.2-3.48-8.52zm-8.52 18.4a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.68.93.97-3.56-.24-.37A9.9 9.9 0 0 1 2.1 12C2.1 6.55 6.55 2.1 12 2.1A9.9 9.9 0 0 1 21.9 12c0 5.45-4.45 9.88-9.9 9.88zm5.44-7.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15s-.77.97-.95 1.17-.35.22-.65.07a8.2 8.2 0 0 1-2.4-1.48 9.14 9.14 0 0 1-1.66-2.07c-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.14-.17.19-.3.28-.5.1-.2.05-.37-.02-.52s-.67-1.6-.91-2.2c-.24-.57-.48-.5-.67-.5h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.46s1.06 2.86 1.21 3.06c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.48 1.69.62.71.22 1.36.19 1.87.11.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.34z"/></svg>
+          Contratar via WhatsApp
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 1 GB -->
+  <div class="modal-overlay" id="modal-plano1g" role="dialog" aria-modal="true" aria-labelledby="modal1g-title" onclick="closeModalOnOverlay(event, 'plano1g')">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div>
+          <h3 id="modal1g-title">Plano Ultra</h3>
+          <p>1 Gbps — R$ 189/mês</p>
+        </div>
+        <button class="modal-close" onclick="closeModal('plano1g')" aria-label="Fechar modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-spec"><span class="modal-spec-label">Velocidade de download</span><span class="modal-spec-value">1.000 Mbps</span></div>
+        <div class="modal-spec"><span class="modal-spec-label">Velocidade de upload</span><span class="modal-spec-value">1.000 Mbps</span></div>
+        <div class="modal-spec"><span class="modal-spec-label">Tipo de conexão</span><span class="modal-spec-value">Fibra óptica FTTH</span></div>
+        <div class="modal-spec"><span class="modal-spec-label">Roteador Wi-Fi</span><span class="modal-spec-value">Wi-Fi 6E enterprise</span></div>
+        <div class="modal-spec"><span class="modal-spec-label">IP fixo</span><span class="modal-spec-value">Incluso</span></div>
+        <div class="modal-spec"><span class="modal-spec-label">SLA</span><span class="modal-spec-value">99,8% uptime</span></div>
+        <div class="modal-spec"><span class="modal-spec-label">Gerente técnico</span><span class="modal-spec-value">Dedicado</span></div>
+        <div class="modal-spec"><span class="modal-spec-label">Instalação</span><span class="modal-spec-value">Gratuita e prioritária</span></div>
+        <div class="modal-spec"><span class="modal-spec-label">Fidelidade</span><span class="modal-spec-value">Nenhuma</span></div>
+        <button class="modal-cta" onclick="openWhatsApp('Plano Ultra 1 Gbps')">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.77 11.77 0 0 0 12 0C5.38 0 0 5.38 0 12a11.93 11.93 0 0 0 1.6 6L0 24l6.2-1.57A12 12 0 0 0 12 24c6.62 0 12-5.38 12-12 0-3.19-1.25-6.2-3.48-8.52zm-8.52 18.4a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.68.93.97-3.56-.24-.37A9.9 9.9 0 0 1 2.1 12C2.1 6.55 6.55 2.1 12 2.1A9.9 9.9 0 0 1 21.9 12c0 5.45-4.45 9.88-9.9 9.88zm5.44-7.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15s-.77.97-.95 1.17-.35.22-.65.07a8.2 8.2 0 0 1-2.4-1.48 9.14 9.14 0 0 1-1.66-2.07c-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.14-.17.19-.3.28-.5.1-.2.05-.37-.02-.52s-.67-1.6-.91-2.2c-.24-.57-.48-.5-.67-.5h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.46s1.06 2.86 1.21 3.06c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.48 1.69.62.71.22 1.36.19 1.87.11.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.34z"/></svg>
+          Contratar via WhatsApp
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MODAL LEGAL ==================== -->
+  <div id="modal-legal" role="dialog" aria-modal="true" aria-label="Informações legais" onclick="closeLegalOnOverlay(event)">
+    <div class="legal-box">
+      <div class="legal-header">
+        <div class="legal-header-top">
+          <h3>Informações Legais</h3>
+          <button class="legal-close" onclick="closeLegal()" aria-label="Fechar">✕</button>
+        </div>
+        <div class="legal-tabs">
+          <button class="legal-tab active" id="tab-privacidade" onclick="switchTab('privacidade')">Política de Privacidade</button>
+          <button class="legal-tab" id="tab-termos" onclick="switchTab('termos')">Termos de Uso</button>
+        </div>
+      </div>
+      <div class="legal-body">
+
+        <!-- PAINEL: PRIVACIDADE -->
+        <div class="legal-panel active" id="panel-privacidade">
+          <h4>1. Informações que coletamos</h4>
+          <p>Coletamos informações fornecidas diretamente por você, como nome, endereço, CPF, e-mail e telefone no momento da contratação. Também coletamos dados de uso da rede para garantir a qualidade do serviço e cumprir obrigações regulatórias da Anatel.</p>
+
+          <h4>2. Como usamos seus dados</h4>
+          <p>Seus dados são utilizados para: (a) prestação e melhoria dos serviços contratados; (b) comunicações sobre sua conta, faturamento e suporte técnico; (c) cumprimento de obrigações legais e regulatórias; (d) envio de ofertas e promoções, mediante seu consentimento expresso.</p>
+
+          <h4>3. Compartilhamento de dados</h4>
+          <p>Não vendemos seus dados pessoais a terceiros. Podemos compartilhá-los apenas com parceiros essenciais para a prestação do serviço (operadoras de backbone, provedores de pagamento) ou mediante determinação legal ou judicial.</p>
+
+          <h4>4. Segurança</h4>
+          <p>Adotamos medidas técnicas e administrativas para proteger suas informações contra acessos não autorizados. Nossos sistemas utilizam criptografia e controles de acesso rigorosos alinhados às melhores práticas do setor.</p>
+
+          <h4>5. Seus direitos (LGPD)</h4>
+          <p>Conforme a Lei Geral de Proteção de Dados (Lei nº 13.709/2018), você tem direito a: confirmar a existência de tratamento; acessar seus dados; corrigir dados incorretos; solicitar anonimização, bloqueio ou eliminação; e revogar consentimento a qualquer momento.</p>
+
+          <h4>6. Cookies</h4>
+          <p>Utilizamos cookies para melhorar sua experiência de navegação e analisar o tráfego do site. Você pode desativar cookies nas configurações do navegador, o que pode afetar algumas funcionalidades.</p>
+
+          <h4>7. Contato com o DPO</h4>
+          <p>Para exercer seus direitos ou esclarecer dúvidas, entre em contato com nosso Encarregado de Dados: <strong>privacidade@conectefibra.com.br</strong></p>
+        </div>
+
+        <!-- PAINEL: TERMOS -->
+        <div class="legal-panel" id="panel-termos">
+          <h4>1. Aceitação dos Termos</h4>
+          <p>Ao contratar os serviços da Conecte Fibra ou utilizar este site, você concorda com estes Termos de Uso integralmente. Caso não concorde com qualquer disposição, não utilize nossos serviços.</p>
+
+          <h4>2. Descrição dos Serviços</h4>
+          <p>A Conecte Fibra oferece serviços de acesso à internet por fibra óptica (FTTH) para pessoas físicas e jurídicas, conforme planos disponíveis em nosso site. As velocidades anunciadas referem-se à velocidade máxima contratada, com garantia mínima de 80% conforme regulamentação Anatel.</p>
+
+          <h4>3. Uso Aceitável</h4>
+          <p>O cliente compromete-se a não utilizar os serviços para: atividades ilegais; envio massivo de spam; distribuição de malware ou vírus; prática de pirataria digital; ataques a redes de terceiros (DDoS, port scanning); ou qualquer atividade que prejudique outros usuários da internet.</p>
+
+          <h4>4. Pagamento e Faturamento</h4>
+          <p>O serviço é cobrado mensalmente na data definida na contratação. O atraso no pagamento pode resultar na suspensão do serviço após notificação prévia de 3 dias úteis. Não há taxa de adesão ou multa de fidelidade em nenhum dos planos.</p>
+
+          <h4>5. Instalação e Equipamentos</h4>
+          <p>A instalação é realizada por técnicos credenciados da Conecte Fibra. Os equipamentos fornecidos (roteador, ONU/ONT) permanecem de propriedade da Conecte Fibra em regime de comodato e devem ser devolvidos em caso de cancelamento. Danos por mau uso serão cobrados conforme tabela vigente.</p>
+
+          <h4>6. Cancelamento</h4>
+          <p>O cancelamento pode ser solicitado a qualquer momento via WhatsApp ou e-mail, sem multas ou taxas adicionais. O serviço é encerrado no próximo ciclo de faturamento após a solicitação, respeitando aviso prévio de 30 dias. Os equipamentos devem ser devolvidos em até 15 dias corridos.</p>
+
+          <h4>7. Limitação de Responsabilidade</h4>
+          <p>A Conecte Fibra não se responsabiliza por danos decorrentes de: casos fortuitos ou força maior; interrupções programadas para manutenção com aviso prévio de 24h; ou falhas em equipamentos de propriedade do cliente que impactem a qualidade da conexão.</p>
+
+          <h4>8. Foro</h4>
+          <p>Fica eleito o foro da comarca de São Paulo/SP para dirimir quaisquer controvérsias oriundas destes Termos, com renúncia expressa a qualquer outro foro, por mais privilegiado que seja.</p>
+
+          <h4>9. Contato</h4>
+          <p>Dúvidas sobre estes termos: <strong>juridico@conectefibra.com.br</strong> ou pelo WhatsApp de atendimento.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== JAVASCRIPT ==================== -->
+  <script>
+    // ---- Footer year ----
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+    // ---- Hamburger menu ----
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const mobileNav    = document.getElementById('mobile-nav');
+
+    hamburgerBtn.addEventListener('click', () => {
+      const isOpen = mobileNav.classList.toggle('open');
+      hamburgerBtn.classList.toggle('open', isOpen);
+      hamburgerBtn.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Close mobile nav on link click
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.remove('open');
+        hamburgerBtn.classList.remove('open');
+        hamburgerBtn.setAttribute('aria-expanded', false);
+      });
+    });
+
+    // ---- FAQ accordion ----
+    function toggleFaq(btn) {
+      const item    = btn.closest('.faq-item');
+      const answer  = item.querySelector('.faq-answer');
+      const isOpen  = item.classList.toggle('open');
+
+      btn.setAttribute('aria-expanded', isOpen);
+      answer.hidden = !isOpen;
+    }
+
+    // ---- Modal logic ----
+    function openModal(planId) {
+      const overlay = document.getElementById('modal-' + planId);
+      if (!overlay) return;
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+
+      // focus trap: focus first focusable element
+      const focusable = overlay.querySelectorAll('button, [href]');
+      if (focusable.length) focusable[0].focus();
+    }
+
+    function closeModal(planId) {
+      const overlay = document.getElementById('modal-' + planId);
+      if (!overlay) return;
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function closeModalOnOverlay(event, planId) {
+      if (event.target === event.currentTarget) closeModal(planId);
+    }
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key !== 'Escape') return;
+      document.querySelectorAll('.modal-overlay.open').forEach(overlay => {
+        const planId = overlay.id.replace('modal-', '');
+        closeModal(planId);
+      });
+    });
+
+    // ---- Legal modal ----
+    function openLegal(tab) {
+      document.getElementById('modal-legal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+      switchTab(tab || 'privacidade');
+    }
+
+    function closeLegal() {
+      document.getElementById('modal-legal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function closeLegalOnOverlay(e) {
+      if (e.target === e.currentTarget) closeLegal();
+    }
+
+    function switchTab(tabId) {
+      ['privacidade','termos'].forEach(id => {
+        document.getElementById('tab-' + id).classList.toggle('active', id === tabId);
+        document.getElementById('panel-' + id).classList.toggle('active', id === tabId);
+      });
+    }
+
+    // Close legal modal on Escape (extend existing keydown listener)
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLegal();
+    });
+
+    // ---- WhatsApp redirect ----
+    function openWhatsApp(planName) {
+      const phone   = '5500000000000'; // Substitua pelo número real
+      const message = encodeURIComponent(`Olá! Tenho interesse no ${planName} da Conecte Fibra. Podem me ajudar?`);
+      window.open(`https://wa.me/${phone}?text=${message}`, '_blank', 'noopener');
+    }
+  </script>
+
+</body>
+</html>
